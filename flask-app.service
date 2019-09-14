@@ -3,7 +3,7 @@ Description=Microblog web application
 After=network.target
 
 [Service]
-User=ubuntu
+User=flask
 # Set your app path here
 WorkingDirectory=/home/flask/flask-test-app
 ExecStart=/home/ubuntu//flask/flask-test-app/venv/bin/gunicorn -b localhost:8000 -w 4 app:app
