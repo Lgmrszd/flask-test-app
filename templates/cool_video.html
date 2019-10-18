@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+        <style>
+            .div-centered {
+            /* width: 560px;
+            height: 315px; */
+            top: 0; right: 0;
+            bottom: 0; left: 0;
+            margin: auto;
+}       </style>
+        <h1>Cool video!</h1>
+        <div class="div-centered">
+            <iframe width="1920" height="1080" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+{% endblock %}

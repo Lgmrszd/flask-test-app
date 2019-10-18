@@ -6,12 +6,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    with open("static/site-default", "r") as f:
+        config_file = f.read()
+    return render_template("index.html", title="Main page", config_file=config_file)
 
 
 @app.route('/cool_video')
 def cool_video():
-    return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    return render_template("cool_video.html", title="Cool video!!!")
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html", title="About this site")
 
 
 if __name__ == '__main__':

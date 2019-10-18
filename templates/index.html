@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block main_content %}
 <h1>Sample Flask app</h1>
 Nothing to see here...
 <dl>
-<dt><a href="https://c.xkcd.com/random/comic/">Read random xkcd comic</a></dt>
-<dt><a href="{{ url_for("cool_video") }}">Watch cool video on YouTube</a></dt>
+<dt><a href="{{ url_for("cool_video") }}">Watch cool video</a></dt>
+<dt><a href="{{ url_for("about") }}">About...</a></dt>
+<dt>Nginx config:</dt>
+<dt>
+    <textarea readonly class="code">
+{{ config_file }}
+    </textarea>
+</dt>
+<dt>Screenshot:</dt>
+<input id="spoiler_button" type="button" value="Unhide" onclick=
+"if(document.getElementById('spoiler') .style.display==='none') {
+    document.getElementById('spoiler') .style.display='';
+    document.getElementById('spoiler_button').value='Hide'
+} else {
+    document.getElementById('spoiler') .style.display='none';
+    document.getElementById('spoiler_button').value='Unhide'
+}"/>
+<div id="spoiler" style="display:none">
+    <img src="/static/screenshot.png"/>
+</div>
+
 </dl>
-</body>
-</html>
+{% endblock %}
