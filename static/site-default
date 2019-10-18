@@ -14,7 +14,7 @@ server {
     } 
 
     location /static {
-        alias /home/flask/flask-test-app;
+        alias /home/flask/flask-test-app/static;
         expires 30d;
     }
 
